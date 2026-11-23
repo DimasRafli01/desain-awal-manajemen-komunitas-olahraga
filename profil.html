@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>Profil - Proyek Manajemen Komunitas Olahraga</title>
+  <script src="assets/js/tailwindcss.js"></script>
+</head>
+
+<body class="bg-white lg:bg-[#111827] flex justify-center min-h-dvh">
+
+  <!-- Container utama: Penuh di Ponsel & Tablet, dibatasi max-w-4xl di Desktop -->
+  <div
+    class="w-full lg:max-w-4xl min-h-dvh bg-white flex flex-col justify-between relative overflow-x-clip lg:shadow-2xl font-sans">
+
+    <!-- Area Atas: Banner Profil -->
+    <div>
+      <!-- Header Biru Dongker -->
+      <header class="bg-[#374B61] pt-14 pb-8 px-6 sm:pt-16 sm:pb-10 sm:px-10 md:px-14 relative">
+        <div class="flex items-center gap-5 sm:gap-7">
+          
+          <!-- Foto Profil Bulat Besar (Menjorok ke bawah batas header) -->
+          <div
+            class="w-[136px] h-[136px] sm:w-[164px] sm:h-[164px] rounded-full bg-[#D6D9DE] overflow-hidden relative shrink-0 -mb-20 sm:-mb-24 shadow-md border-4 border-white/10 flex items-center justify-center">
+            <!-- Ikon Placeholder Default saat src="" kosong -->
+            <svg class="w-16 h-16 sm:w-20 sm:h-20 text-[#64748B]" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+            </svg>
+            <!-- Ganti src="" dengan lokasi foto profil jika sudah ada -->
+            <img
+              src=""
+              alt="Mamat Alkatiri"
+              class="absolute inset-0 w-full h-full object-cover"
+              onerror="this.style.display='none'"
+            />
+          </div>
+
+          <!-- Nama & Username -->
+          <div class="text-white min-w-0 pt-2">
+            <h1 class="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight leading-snug truncate">
+              Mamat Alkatiri
+            </h1>
+            <p class="mt-1 text-sm sm:text-base text-white/95 font-normal truncate">
+              @꧁༺ ȻɌÅƵ¥ ꝀÏḼḼҘɌ ༻꧂
+            </p>
+          </div>
+
+        </div>
+      </header>
+
+      <!-- Konten Putih di Bawah Banner (Diberi padding atas untuk memberi ruang avatar yang menjorok) -->
+      <main class="px-6 pt-20 pb-24 sm:px-10 sm:pt-24 md:px-14">
+        <!-- Area kosong sesuai desain, siap diisi menu pengaturan/riwayat jika diperlukan nanti -->
+      </main>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="sticky bottom-0 z-20 bg-[#E5E9EC] h-[74px] sm:h-[82px] px-2 border-t border-black/5 shadow-[0_-2px_10px_rgba(0,0,0,0.04)]">
+      <div class="max-w-xl mx-auto h-full flex items-center justify-around">
+
+        <!-- Menu: Beranda -->
+        <a href="index.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#8E969E] hover:text-[#374B61] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9.5z" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-medium">Beranda</span>
+        </a>
+
+        <!-- Menu: Komunitas -->
+        <a href="komunitas.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#8E969E] hover:text-[#374B61] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-medium">Komunitas</span>
+        </a>
+
+        <!-- Ruang Kosong untuk Tombol Tengah -->
+        <div class="w-16 sm:w-20"></div>
+
+        <!-- Floating Action Button (+) di Tengah -->
+        <a href="buatkomunitas.html" aria-label="Buat Komunitas Baru"
+          class="absolute left-1/2 -translate-x-1/2 -top-7 sm:-top-8 w-[68px] h-[68px] sm:w-[76px] sm:h-[76px] rounded-full bg-[#C4F135] text-[#22364A] flex items-center justify-center shadow-md hover:brightness-95 active:scale-95 transition cursor-pointer">
+          <svg class="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+        </a>
+
+        <!-- Menu: Iuran -->
+        <a href="iuran.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#8E969E] hover:text-[#374B61] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="16" height="10" rx="1.5" />
+            <circle cx="10" cy="11" r="2" />
+            <path d="M6 19h14a2 2 0 0 0 2-2V9" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-medium">Iuran</span>
+        </a>
+
+        <!-- Menu: Profil (Aktif) -->
+        <a href="profil.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#1E293B] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-semibold">Profil</span>
+        </a>
+
+      </div>
+    </nav>
+
+  </div>
+
+</body>
+
+</html>

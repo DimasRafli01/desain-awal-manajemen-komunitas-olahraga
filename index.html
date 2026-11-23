@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="img/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>proyek-manajemen-komunitas-olahraga</title>
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <script src="./assets/js/tailwindcss.js"></script>
+</head>
+
+<body class="bg-[#F8F9F4] lg:bg-[#111827] flex justify-center min-h-dvh">
+
+  <!-- Container utama: Penuh di Ponsel & Tablet, dibatasi max-w-4xl di Desktop -->
+  <div
+    class="w-full lg:max-w-4xl min-h-dvh bg-[#F8F9F4] flex flex-col justify-between relative overflow-x-clip lg:shadow-2xl font-sans">
+
+    <!-- Header Sapaan -->
+    <header class="px-5 pt-8 pb-6 sm:px-8 sm:pt-10 sm:pb-8 md:px-12">
+      <h1 class="text-[30px] sm:text-4xl font-bold text-[#162536] leading-tight tracking-tight">
+        Hai, Mamat
+      </h1>
+      <p class="text-[15px] sm:text-lg font-semibold text-[#2B4159] mt-1.5">
+        Temukan acara yang akan berlangsung!
+      </p>
+    </header>
+
+    <!-- Konten Utama (Card Biru Gelap berisi daftar acara) -->
+    
+     <main class="flex-1 bg-[#22364A] rounded-t-[28px] px-6 flex flex-col items-center justify-center text-center pb-16">
+      <p class="text-white text-[15px] font-semibold leading-relaxed max-w-[270px]">
+        Kamu belum punya acara nih.<br />
+        Temukan acara yang cocok untuk mu!
+      </p>
+
+      <button
+        type="button"
+        class="mt-6 w-full max-w-[250px] py-3 px-6 rounded-xl border-2 border-[#C4F135] text-[#C4F135] font-medium text-[15px] hover:bg-[#C4F135]/10 active:scale-[0.98] transition cursor-pointer"
+      ><a href="pencarian.html">Cari acara</a>
+      </button>
+    </main>
+
+    <!-- Bottom Navigation Bar (Sticky di bawah layar saat konten di-scroll) -->
+    <nav class="sticky bottom-0 z-20 bg-[#E5E9EC] h-[74px] sm:h-[82px] px-2 border-t border-black/5">
+      <div class="max-w-xl mx-auto h-full flex items-center justify-around">
+
+        <!-- Menu: Beranda -->
+        <a href="./index.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#1E293B] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9.5z" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-medium">Beranda</span>
+        </a>
+
+        <!-- Menu: Komunitas -->
+        <a href="./komunitas.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#8E969E] hover:text-[#374B61] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-medium">Komunitas</span>
+        </a>
+
+        <!-- Ruang Kosong untuk Tombol Tengah -->
+        <div class="w-16 sm:w-20"></div>
+
+        <!-- Floating Action Button (+) di Tengah -->
+        <a href="./buatkomunitas.html" aria-label="Buat Komunitas Baru"
+          class="absolute left-1/2 -translate-x-1/2 -top-7 sm:-top-8 w-[68px] h-[68px] sm:w-[76px] sm:h-[76px] rounded-full bg-[#C4F135] text-[#22364A] flex items-center justify-center shadow-md hover:brightness-95 active:scale-95 transition cursor-pointer">
+          <svg class="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+        </a>
+
+        <!-- Menu: Iuran (Aktif) -->
+        <a href="./iuran.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#8E969E] hover:text-[#374B61] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="16" height="10" rx="1.5" />
+            <circle cx="10" cy="11" r="2" />
+            <path d="M6 19h14a2 2 0 0 0 2-2V9" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-semibold">Iuran</span>
+        </a>
+
+        <!-- Menu: Profil -->
+        <a href="./profil.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#8E969E] hover:text-[#374B61] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-medium">Profil</span>
+        </a>
+
+      </div>
+    </nav>
+
+  </div>
+</body>
+
+</html>

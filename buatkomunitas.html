@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>Buat Komunitas - Proyek Manajemen Komunitas Olahraga</title>
+  <script src="./assets/js/tailwindcss.js"></script>
+</head>
+
+<body class="bg-[#F8F9F4] lg:bg-[#111827] flex justify-center min-h-dvh">
+
+  <!-- Container utama: Penuh di Ponsel & Tablet, dibatasi max-w-4xl di Desktop -->
+  <div
+    class="w-full lg:max-w-4xl min-h-dvh bg-[#F8F9F4] flex flex-col justify-between relative overflow-x-clip lg:shadow-2xl font-sans">
+
+    <!-- Header Halaman -->
+    <header class="px-5 pt-7 pb-6 sm:px-8 sm:pt-9 sm:pb-7 md:px-12 flex items-center gap-4">
+      <button type="button" onclick="window.history.back()" aria-label="Kembali"
+        class="p-1.5 -ml-1.5 text-[#162536] hover:bg-black/5 rounded-full transition cursor-pointer shrink-0">
+        <svg class="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+
+      <h1 class="text-[28px] sm:text-4xl font-bold text-[#374B61] leading-tight tracking-tight">
+        Buat Komunitas
+      </h1>
+    </header>
+
+    <!-- Konten Utama (Card Biru Gelap) -->
+    <main
+      class="flex-1 bg-[#22364A] rounded-t-[28px] sm:rounded-t-[36px] px-5 pt-7 pb-9 sm:px-8 sm:pt-9 sm:pb-11 md:px-12 flex flex-col justify-between">
+      
+      <!-- Form Input -->
+      <div>
+        <label for="community-name-input" class="block text-white text-lg sm:text-xl font-bold tracking-tight">
+          Beri nama Komunitas mu
+        </label>
+
+        <input
+          id="community-name-input"
+          type="text"
+          placeholder="isi nama"
+          autocomplete="off"
+          class="mt-4 w-full h-[48px] sm:h-[54px] px-4 rounded-lg bg-[#D6D6D3] text-[#162536] placeholder-[#8E8E8B] text-[15px] sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#C4F135] transition"
+        />
+
+        <!-- Pilihan Privat / Publik -->
+        <div class="mt-7 space-y-5">
+          <!-- Opsi: Privat -->
+          <label class="inline-flex items-center gap-3.5 cursor-pointer select-none group">
+            <input type="checkbox" name="privacy" value="Privat" class="privacy-checkbox peer sr-only" />
+            <span
+              class="w-6 h-6 rounded-[5px] border-2 border-white flex items-center justify-center text-transparent peer-checked:text-white transition">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </span>
+            <span class="text-white text-[16px] sm:text-lg font-bold">Privat</span>
+          </label>
+
+          <br />
+
+          <!-- Opsi: Publik -->
+          <label class="inline-flex items-center gap-3.5 cursor-pointer select-none group">
+            <input type="checkbox" name="privacy" value="Publik" class="privacy-checkbox peer sr-only" />
+            <span
+              class="w-6 h-6 rounded-[5px] border-2 border-white flex items-center justify-center text-transparent peer-checked:text-white transition">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </span>
+            <span class="text-white text-[16px] sm:text-lg font-bold">Publik</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Tombol LANJUTKAN -->
+      <div class="pt-8">
+        <button
+          type="button"
+          id="submit-community-btn"
+          disabled
+          class="w-full py-3.5 sm:py-4 px-6 rounded-xl bg-[#F4F5F0] text-[#9E9E9A] font-bold text-base sm:text-lg tracking-wide uppercase transition cursor-not-allowed"
+        >
+          LANJUTKAN
+        </button>
+      </div>
+
+    </main>
+
+    <!-- POP-UP KOMUNITAS BERHASIL DIBUAT -->
+    <div id="created-popup" class="fixed inset-0 z-50 hidden flex items-center justify-center px-5">
+      <div class="fixed inset-0 bg-black/60 backdrop-blur-[1px]"></div>
+
+      <div
+        class="relative z-10 w-full max-w-xs sm:max-w-sm bg-white rounded-[24px] p-6 sm:p-7 text-center shadow-2xl">
+        <!-- Ikon Centang -->
+        <div
+          class="w-16 h-16 mx-auto rounded-full bg-[#C4F135] text-[#162536] flex items-center justify-center shadow-sm">
+          <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+
+        <h3 class="mt-4 text-lg sm:text-xl font-bold text-[#162536]">
+          Komunitas Berhasil Dibuat!
+        </h3>
+        <p id="created-community-desc" class="mt-1.5 text-sm sm:text-base text-[#475569] leading-relaxed">
+          Komunitas barumu sudah siap. Yuk mulai buat jadwal kegiatan pertamamu!
+        </p>
+
+        <!-- Tombol Buat Acara Baru -->
+        <a
+          href="./pencarian.html"
+          class="mt-6 block w-full py-3.5 px-5 rounded-xl bg-[#F46A25] hover:bg-[#e25d1b] text-white font-bold text-sm sm:text-base shadow-md shadow-[#F46A25]/25 transition cursor-pointer"
+        >
+          Buat Acara Baru
+        </a>
+
+        <!-- Opsi sekunder kembali ke daftar komunitas -->
+        <a
+          href="./komunitas_berisi.html"
+          class="mt-3 block w-full py-2.5 px-5 rounded-xl text-[#374B61] hover:bg-black/5 font-semibold text-xs sm:text-sm transition"
+        >
+          Lihat Daftar Komunitas
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./assets/js/buatkomunitas.js"></script>
+</body>
+
+</html>

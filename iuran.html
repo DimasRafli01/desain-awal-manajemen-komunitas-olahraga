@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>Daftar Iuran - Proyek Manajemen Komunitas Olahraga</title>
+  <script src="./assets/js/tailwindcss.js"></script>
+</head>
+
+<body class="bg-[#F8F9F4] lg:bg-[#111827] flex justify-center min-h-dvh">
+
+  <!-- Container utama: Penuh di Ponsel & Tablet, dibatasi max-w-4xl di Desktop -->
+  <div
+    class="w-full lg:max-w-4xl min-h-dvh bg-[#F8F9F4] flex flex-col justify-between relative overflow-x-clip lg:shadow-2xl font-sans">
+
+    <!-- Header Halaman -->
+    <header class="px-5 pt-7 pb-6 sm:px-8 sm:pt-9 sm:pb-7 md:px-12 flex items-center gap-4">
+      <a href="./index.html" aria-label="Kembali ke Beranda"
+        class="p-1.5 -ml-1.5 text-[#162536] hover:bg-black/5 rounded-full transition cursor-pointer shrink-0">
+        <svg class="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </a>
+
+      <h1 class="text-[28px] sm:text-4xl font-bold text-[#374B61] leading-tight tracking-tight">
+        Daftar Iuran
+      </h1>
+    </header>
+
+    <!-- Konten Utama (Card Biru Gelap) -->
+    <main
+      class="flex-1 bg-[#22364A] rounded-t-[28px] sm:rounded-t-[36px] px-4 pt-6 pb-24 sm:px-8 sm:pt-8 md:px-12">
+      
+      <!-- Grid Daftar Iuran: 1 kolom di HP, 2 kolom di Tablet ke atas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+
+        <!-- Card Iuran 1 -->
+        <article
+          class="bg-[#DDDDDB] rounded-[16px] p-4 sm:p-5 flex flex-col justify-between min-h-[115px] sm:min-h-[130px] shadow-md hover:brightness-98 transition cursor-pointer">
+          
+          <!-- Baris Atas: Judul Acara & Badge Status -->
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="text-black text-base sm:text-lg font-bold leading-snug">
+              Funmatch Mamatch
+            </h2>
+
+            <span
+              class="px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-[4px] bg-[#F7CD52] text-black text-xs sm:text-[13px] font-medium shrink-0">
+              Belum bayar
+            </span>
+          </div>
+
+          <!-- Baris Bawah: Total Iuran -->
+          <p class="mt-6 text-black text-sm sm:text-base font-medium">
+            Total Iuran: <span class="font-semibold">Rp18.000</span>
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="sticky bottom-0 z-20 bg-[#E5E9EC] h-[74px] sm:h-[82px] px-2 border-t border-black/5">
+      <div class="max-w-xl mx-auto h-full flex items-center justify-around">
+
+        <!-- Menu: Beranda -->
+        <a href="./index.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#8E969E] hover:text-[#374B61] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9.5z" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-medium">Beranda</span>
+        </a>
+
+        <!-- Menu: Komunitas -->
+        <a href="./komunitas.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#8E969E] hover:text-[#374B61] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-medium">Komunitas</span>
+        </a>
+
+        <!-- Ruang Kosong untuk Tombol Tengah -->
+        <div class="w-16 sm:w-20"></div>
+
+        <!-- Floating Action Button (+) di Tengah -->
+        <a href="./buatkomunitas.html" aria-label="Buat Komunitas Baru"
+          class="absolute left-1/2 -translate-x-1/2 -top-7 sm:-top-8 w-[68px] h-[68px] sm:w-[76px] sm:h-[76px] rounded-full bg-[#C4F135] text-[#22364A] flex items-center justify-center shadow-md hover:brightness-95 active:scale-95 transition cursor-pointer">
+          <svg class="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+        </a>
+
+        <!-- Menu: Iuran (Aktif) -->
+        <a href="./iuran.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#1E293B] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="16" height="10" rx="1.5" />
+            <circle cx="10" cy="11" r="2" />
+            <path d="M6 19h14a2 2 0 0 0 2-2V9" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-semibold">Iuran</span>
+        </a>
+
+        <!-- Menu: Profil -->
+        <a href="./profil.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#8E969E] hover:text-[#374B61] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-medium">Profil</span>
+        </a>
+
+      </div>
+    </nav>
+
+  </div>
+
+</body>
+
+</html>
