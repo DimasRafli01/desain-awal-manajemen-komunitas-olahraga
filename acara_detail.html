@@ -33,11 +33,11 @@
     <!-- Konten Utama (Card Biru Gelap) -->
     <main
       class="flex-1 bg-[#22364A] rounded-t-[28px] sm:rounded-t-[36px] px-5 pt-6 pb-9 sm:px-8 sm:pt-8 sm:pb-11 md:px-12 flex flex-col justify-between">
-      
+
       <div>
         <!-- Navigasi 4 Tab Atas: Jadwal, Anggota, Absensi, Biaya -->
         <nav class="grid grid-cols-4 gap-2 pb-7">
-          
+
           <!-- Tab 1: Jadwal -->
           <button type="button" data-tab="jadwal"
             class="main-tab-btn flex flex-col items-center gap-1.5 text-[#C4F135] transition cursor-pointer">
@@ -179,7 +179,8 @@
 
           <div class="mt-7">
             <h2 class="text-white text-base sm:text-lg font-bold">Anggota</h2>
-            <div id="event-member-grid" class="mt-4 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3.5 sm:gap-4"></div>
+            <div id="event-member-grid" class="mt-4 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3.5 sm:gap-4">
+            </div>
           </div>
         </section>
 
@@ -198,9 +199,22 @@
             </button>
           </div>
 
-          <!-- Sub-panel 3A: Konfirmasi Peserta -->
+          <!-- Sub-panel 3A: QR Absensi -->
           <div id="subpanel-konfirmasi" class="absensi-subpanel">
-            <div id="pending-confirm-list" class="space-y-3">
+            <div id="pending-confirm-list" class="space-y-3 flex flex-col items-center justify-center text-center">
+              <div id="qr-scanner-box"
+                class="w-60 h-60 sm:w-68 sm:h-68 bg-[#192838] border-2 border-dashed border-[#C4F135] rounded-2xl p-4 flex items-center justify-center shadow-inner">
+
+                <!-- Kotak Dalam untuk Memasukkan Gambar QR -->
+                <div class="w-full h-full bg-white/5 rounded-xl overflow-hidden flex items-center justify-center">
+                  <img id="qr-image" src="assets/img/qr.png" alt="QR Code Konfirmasi Kehadiran" class="w-full h-full object-contain" />
+                </div>
+
+              </div>
+
+              <p class="mt-4 text-white text-sm sm:text-base font-medium max-w-[240px] leading-relaxed">
+                Scan QR di atas untuk konfirmasi kehadiran
+              </p>
               <!-- Diisi JS (bisa kosong atau daftar konfirmasi) -->
             </div>
           </div>
@@ -223,13 +237,8 @@
             <div
               class="mt-2.5 flex items-center h-[44px] sm:h-[48px] px-3.5 rounded-lg bg-[#D6D6D3] text-[#111827] max-w-md">
               <span class="font-bold text-base sm:text-lg mr-3 select-none">Rp</span>
-              <input
-                id="court-fee-input"
-                type="text"
-                inputmode="numeric"
-                value="50.000"
-                class="w-full bg-transparent text-base sm:text-lg font-medium focus:outline-none"
-              />
+              <input id="court-fee-input" type="text" inputmode="numeric" value="50.000"
+                class="w-full bg-transparent text-base sm:text-lg font-medium focus:outline-none" />
             </div>
           </div>
 
@@ -246,23 +255,16 @@
                   Beli Air Minum 1 Dus
                 </p>
                 <div class="flex items-center gap-3 max-w-md">
-                  <div class="flex-1 flex items-center h-[44px] sm:h-[48px] px-3.5 rounded-lg bg-[#D6D6D3] text-[#111827]">
+                  <div
+                    class="flex-1 flex items-center h-[44px] sm:h-[48px] px-3.5 rounded-lg bg-[#D6D6D3] text-[#111827]">
                     <span class="font-bold text-base sm:text-lg mr-3 select-none">Rp</span>
-                    <input
-                      type="text"
-                      inputmode="numeric"
-                      value="20.000"
-                      class="global-fee-input w-full bg-transparent text-base sm:text-lg font-medium focus:outline-none"
-                    />
+                    <input type="text" inputmode="numeric" value="20.000"
+                      class="global-fee-input w-full bg-transparent text-base sm:text-lg font-medium focus:outline-none" />
                   </div>
 
                   <!-- Tombol + untuk menambah item biaya global baru -->
-                  <button
-                    type="button"
-                    id="add-global-expense-btn"
-                    aria-label="Tambah biaya global"
-                    class="w-9 h-9 text-white hover:text-[#C4F135] flex items-center justify-center text-2xl font-bold transition cursor-pointer shrink-0"
-                  >
+                  <button type="button" id="add-global-expense-btn" aria-label="Tambah biaya global"
+                    class="w-9 h-9 text-white hover:text-[#C4F135] flex items-center justify-center text-2xl font-bold transition cursor-pointer shrink-0">
                     +
                   </button>
                 </div>
@@ -294,11 +296,8 @@
 
       <!-- Tombol Aksi Utama di Bawah (Berubah sesuai Tab aktif) -->
       <div id="bottom-action-wrapper" class="pt-8">
-        <button
-          type="button"
-          id="main-action-btn"
-          class="w-full py-3.5 sm:py-4 px-6 rounded-xl bg-[#C4F135] hover:brightness-95 text-[#162536] font-bold text-base sm:text-lg shadow-[0_0_20px_rgba(196,241,53,0.35)] active:scale-[0.99] transition cursor-pointer"
-        >
+        <button type="button" id="main-action-btn"
+          class="w-full py-3.5 sm:py-4 px-6 rounded-xl bg-[#C4F135] hover:brightness-95 text-[#162536] font-bold text-base sm:text-lg shadow-[0_0_20px_rgba(196,241,53,0.35)] active:scale-[0.99] transition cursor-pointer">
           Undang Teman
         </button>
       </div>
