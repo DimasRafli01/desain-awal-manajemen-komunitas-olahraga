@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>Buat Jadwal Acara - Proyek Manajemen Komunitas Olahraga</title>
+  <script src="./assets/js/tailwindcss.js"></script>
+</head>
+
+<body class="bg-[#F8F9F4] lg:bg-[#111827] flex justify-center min-h-dvh">
+
+  <!-- Container utama: Penuh di Ponsel & Tablet, dibatasi max-w-4xl di Desktop -->
+  <div
+    class="w-full lg:max-w-4xl min-h-dvh bg-[#F8F9F4] pt-4 sm:pt-6 flex flex-col justify-between relative overflow-x-clip lg:shadow-2xl font-sans">
+
+    <!-- Kontainer Biru Gelap Utama -->
+    <div
+      class="flex-1 bg-[#22364A] rounded-t-[28px] sm:rounded-t-[36px] flex flex-col justify-between overflow-hidden">
+      
+      <div>
+        <!-- Header di dalam Kontainer Biru Gelap -->
+        <header class="relative flex items-center justify-center px-5 py-5 sm:px-8 sm:py-6 border-b border-white/25">
+          <button type="button" onclick="window.history.back()" aria-label="Kembali"
+            class="absolute left-4 sm:left-7 p-1.5 text-white hover:bg-white/10 rounded-full transition cursor-pointer">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          <h1 class="text-white text-lg sm:text-xl font-bold tracking-wide uppercase">
+            BUAT JADWAL
+          </h1>
+        </header>
+
+        <!-- Form Utama -->
+        <form id="create-event-form" class="px-5 pt-6 pb-8 sm:px-8 sm:pt-8 md:px-12 space-y-6">
+          
+          <!-- Bagian 1: Pilih Hari -->
+          <div>
+            <label class="block text-white text-base sm:text-lg font-bold">
+              Pilih Hari
+            </label>
+
+            <div id="day-selector" class="mt-4 flex items-center gap-3 sm:gap-4 overflow-x-auto pb-1">
+              <button type="button" data-day="Sen"
+                class="day-circle w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-dashed border-white text-white font-bold text-sm sm:text-base flex items-center justify-center shrink-0 transition cursor-pointer">
+                Sen
+              </button>
+              <button type="button" data-day="Sel"
+                class="day-circle w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-dashed border-white text-white font-bold text-sm sm:text-base flex items-center justify-center shrink-0 transition cursor-pointer">
+                Sel
+              </button>
+              <button type="button" data-day="Rab"
+                class="day-circle w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-dashed border-white text-white font-bold text-sm sm:text-base flex items-center justify-center shrink-0 transition cursor-pointer">
+                Rab
+              </button>
+              <button type="button" data-day="Kam"
+                class="day-circle w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-dashed border-white text-white font-bold text-sm sm:text-base flex items-center justify-center shrink-0 transition cursor-pointer">
+                Kam
+              </button>
+              <button type="button" data-day="Jum"
+                class="day-circle w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-dashed border-white text-white font-bold text-sm sm:text-base flex items-center justify-center shrink-0 transition cursor-pointer">
+                Jum
+              </button>
+              <button type="button" data-day="Sab"
+                class="day-circle w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-dashed border-white text-white font-bold text-sm sm:text-base flex items-center justify-center shrink-0 transition cursor-pointer">
+                Sab
+              </button>
+              <button type="button" data-day="Min"
+                class="day-circle w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-dashed border-white text-white font-bold text-sm sm:text-base flex items-center justify-center shrink-0 transition cursor-pointer">
+                Min
+              </button>
+            </div>
+          </div>
+
+          <!-- Bagian 2: Waktu, Durasi, Lokasi, dan Visibilitas (Tanpa ikon orang) -->
+          <div class="pt-1 space-y-5 text-white">
+            
+            <!-- 1. Waktu (Jam Main) -->
+            <div class="flex items-center gap-4">
+              <svg class="w-6 h-6 shrink-0 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="13" r="8" />
+                <path d="M12 9v4l2.5 1.5" />
+                <path d="M9 2h6" />
+              </svg>
+              <div class="flex-1 max-w-xs flex items-center gap-2 border-b border-white/25 pb-1.5 focus-within:border-[#C4F135] transition">
+                <input
+                  id="event-time"
+                  type="time"
+                  value="13:00"
+                  class="bg-transparent text-white text-[15px] sm:text-base font-semibold focus:outline-none [color-scheme:dark] cursor-pointer"
+                />
+                <span class="text-sm text-white/80 font-semibold">WIB</span>
+              </div>
+            </div>
+
+            <!-- 2. Durasi -->
+            <div class="flex items-center gap-4">
+              <svg class="w-6 h-6 shrink-0 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 22h14" />
+                <path d="M5 2h14" />
+                <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
+                <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
+              </svg>
+              <div class="flex-1 max-w-xs border-b border-white/25 pb-1.5 focus-within:border-[#C4F135] transition">
+                <select
+                  id="event-duration"
+                  class="w-full bg-[#22364A] text-white text-[15px] sm:text-base font-semibold focus:outline-none cursor-pointer"
+                >
+                  <option value="1 Jam">1 Jam</option>
+                  <option value="2 Jam" selected>2 Jam</option>
+                  <option value="3 Jam">3 Jam</option>
+                  <option value="4 Jam">4 Jam</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- 3. Lokasi -->
+            <div class="flex items-center gap-4">
+              <svg class="w-6 h-6 shrink-0 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" />
+              </svg>
+              <div class="flex-1 max-w-md border-b border-white/25 pb-1.5 focus-within:border-[#C4F135] transition">
+                <input
+                  id="event-location"
+                  type="text"
+                  placeholder="Masukkan lokasi / nama lapangan..."
+                  autocomplete="off"
+                  class="w-full bg-transparent text-white placeholder-white/50 text-[15px] sm:text-base font-semibold focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <!-- 4. Visibilitas -->
+            <div class="flex items-center gap-4">
+              <svg id="visibility-icon" class="w-6 h-6 shrink-0 text-white" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="11" width="16" height="10" rx="2" />
+                <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+              </svg>
+              <div class="flex-1 max-w-xs border-b border-white/25 pb-1.5 focus-within:border-[#C4F135] transition">
+                <select
+                  id="event-visibility"
+                  class="w-full bg-[#22364A] text-white text-[15px] sm:text-base font-semibold focus:outline-none cursor-pointer"
+                >
+                  <option value="Privat">Privat</option>
+                  <option value="Publik">Publik</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bagian 3: Buat nama acara & Deskripsi acara -->
+          <div class="pt-3 space-y-5">
+            <div>
+              <label for="event-name" class="block text-white text-base sm:text-lg font-bold">
+                Buat nama acara
+              </label>
+              <input
+                id="event-name"
+                type="text"
+                placeholder="Contoh: Funmatch Futsal Malam"
+                autocomplete="off"
+                class="mt-2.5 w-full h-[46px] sm:h-[52px] px-4 rounded-md bg-transparent border border-white/80 text-white placeholder-white/40 text-[15px] sm:text-base focus:outline-none focus:border-[#C4F135] focus:ring-1 focus:ring-[#C4F135] transition"
+              />
+            </div>
+
+            <div>
+              <label for="event-description" class="block text-white text-base sm:text-lg font-bold">
+                Deskripsi acara
+              </label>
+              <input
+                id="event-description"
+                type="text"
+                placeholder="Tulis catatan atau aturan main..."
+                autocomplete="off"
+                class="mt-2.5 w-full h-[46px] sm:h-[52px] px-4 rounded-md bg-transparent border border-white/80 text-white placeholder-white/40 text-[15px] sm:text-base focus:outline-none focus:border-[#C4F135] focus:ring-1 focus:ring-[#C4F135] transition"
+              />
+            </div>
+          </div>
+
+          <!-- Tombol LANJUTKAN -->
+          <div class="pt-4">
+            <button
+              type="submit"
+              id="submit-event-btn"
+              class="w-full py-3.5 sm:py-4 px-6 rounded-xl bg-[#C4F135] hover:brightness-95 text-[#162536] font-bold text-base sm:text-lg tracking-wide uppercase shadow-[0_0_20px_rgba(196,241,53,0.3)] active:scale-[0.99] transition cursor-pointer"
+            >
+              LANJUTKAN
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+
+    <!-- POP-UP ACARA BERHASIL DIBUAT -->
+    <!-- POP-UP 1: KONFIRMASI "ANDA YAKIN?" -->
+    <div id="confirm-event-popup" class="fixed inset-0 z-50 hidden flex items-center justify-center px-5">
+      <div id="confirm-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-[1px]"></div>
+
+      <div
+        class="relative z-10 w-full max-w-xs sm:max-w-sm bg-white rounded-[24px] p-6 sm:p-7 text-center shadow-2xl">
+        <!-- Ikon Tanda Tanya -->
+        <div
+          class="w-16 h-16 mx-auto rounded-full bg-[#F7CD52]/25 text-[#B45309] flex items-center justify-center">
+          <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+        </div>
+
+        <h3 class="mt-4 text-lg sm:text-xl font-bold text-[#162536]">
+          Anda yakin?
+        </h3>
+        <p id="confirm-summary-text" class="mt-1.5 text-sm sm:text-base text-[#475569] leading-relaxed">
+          Pastikan jadwal, lokasi, dan detail acara yang diisi sudah sesuai.
+        </p>
+
+        <!-- Tombol Batal & Buat Acara -->
+        <div class="mt-6 grid grid-cols-2 gap-3">
+          <button
+            type="button"
+            id="cancel-confirm-btn"
+            class="w-full py-3 px-4 rounded-xl bg-slate-200 hover:bg-slate-300 text-[#162536] font-bold text-sm sm:text-base transition cursor-pointer"
+          >
+            Batal
+          </button>
+
+          <button
+            type="button"
+            id="proceed-create-btn"
+            class="w-full py-3 px-4 rounded-xl bg-[#C4F135] hover:brightness-95 text-[#162536] font-bold text-sm sm:text-base shadow-sm transition cursor-pointer"
+          >
+            Buat Acara
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- POP-UP 2: ACARA BERHASIL DIBUAT -->
+    <div id="event-created-popup" class="fixed inset-0 z-[60] hidden flex items-center justify-center px-5">
+      <div class="fixed inset-0 bg-black/60 backdrop-blur-[1px]"></div>
+
+      <div
+        class="relative z-10 w-full max-w-xs sm:max-w-sm bg-white rounded-[24px] p-6 sm:p-7 text-center shadow-2xl">
+        <!-- Ikon Centang -->
+        <div
+          class="w-16 h-16 mx-auto rounded-full bg-[#C4F135] text-[#162536] flex items-center justify-center shadow-sm">
+          <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+
+        <h3 class="mt-4 text-lg sm:text-xl font-bold text-[#162536]">
+          Acara Berhasil Dibuat!
+        </h3>
+        <p id="event-summary-text" class="mt-1.5 text-sm sm:text-base text-[#475569] leading-relaxed">
+          Acara barumu siap dibagikan ke anggota komunitas.
+        </p>
+
+        <a
+          href="./detail_acara.html"
+          class="mt-6 block w-full py-3.5 px-5 rounded-xl bg-[#22364A] hover:bg-[#162536] text-[#C4F135] font-bold text-sm sm:text-base transition cursor-pointer"
+        >
+          Lihat Acara
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./assets/js/buatacara.js"></script>
+</body>
+
+</html>

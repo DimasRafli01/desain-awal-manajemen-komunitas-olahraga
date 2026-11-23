@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>Daftar - Proyek Manajemen Komunitas Olahraga</title>
+  <script src="./assets/js/tailwindcss.js"></script>
+</head>
+
+<body class="bg-[#16283D] lg:bg-[#0B131E] flex justify-center min-h-dvh">
+
+  <!-- Container utama -->
+  <div
+    class="w-full lg:max-w-4xl min-h-dvh bg-gradient-to-b from-[#172A40] to-[#122031] flex flex-col justify-between relative overflow-hidden lg:shadow-2xl font-sans">
+
+    <!-- Background Image (Link dikosongkan sesuai permintaan) -->
+    <div class="relative w-full h-[210px] sm:h-[240px] flex items-center justify-center shrink-0">
+      <img
+        src=""
+        alt="Ilustrasi Olahraga"
+        class="w-full h-full object-contain object-center"
+        onerror="this.style.display='none'"
+      />
+    </div>
+
+    <!-- Area Card Form Daftar -->
+    <main class="flex-1 flex flex-col items-center justify-start px-5 pb-10 sm:px-8 -mt-6 relative z-10">
+      
+      <!-- Card Biru Gelap -->
+      <div class="w-full max-w-md bg-[#0F1B29] rounded-[28px] px-6 py-8 sm:px-8 sm:py-10 shadow-2xl">
+        <h1 class="text-white text-2xl sm:text-3xl font-bold text-center tracking-wide uppercase">
+          DAFTAR
+        </h1>
+
+        <form id="register-form" class="mt-6 space-y-4 sm:space-y-5">
+          
+          <!-- Input Nama -->
+          <div>
+            <label for="register-name" class="block text-white text-sm sm:text-base font-bold mb-2">
+              nama
+            </label>
+            <div class="relative flex items-center">
+              <svg class="w-5 h-5 text-[#162536] absolute left-3.5 pointer-events-none" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+              </svg>
+
+              <input
+                id="register-name"
+                type="text"
+                placeholder="Nama Kamu"
+                required
+                class="w-full h-[46px] sm:h-[50px] pl-11 pr-4 rounded-md bg-[#F4F5F0] text-[#162536] placeholder-[#8E969E] text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#C4F135] transition"
+              />
+            </div>
+          </div>
+
+          <!-- Input Email -->
+          <div>
+            <label for="register-email" class="block text-white text-sm sm:text-base font-bold mb-2">
+              email
+            </label>
+            <div class="relative flex items-center">
+              <svg class="w-5 h-5 text-[#162536] absolute left-3.5 pointer-events-none" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+
+              <input
+                id="register-email"
+                type="email"
+                placeholder="akuimut123@gmail.com"
+                required
+                class="w-full h-[46px] sm:h-[50px] pl-11 pr-4 rounded-md bg-[#F4F5F0] text-[#162536] placeholder-[#8E969E] text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#C4F135] transition"
+              />
+            </div>
+          </div>
+
+          <!-- Input Password -->
+          <div>
+            <label for="register-password" class="block text-white text-sm sm:text-base font-bold mb-2">
+              password
+            </label>
+            <div class="relative flex items-center">
+              <svg class="w-5 h-5 text-[#162536] absolute left-3.5 pointer-events-none" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="11" width="16" height="10" rx="2" />
+                <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                <circle cx="12" cy="16" r="1" fill="currentColor" />
+              </svg>
+
+              <input
+                id="register-password"
+                type="password"
+                placeholder="HaiimYuDd123"
+                required
+                class="w-full h-[46px] sm:h-[50px] pl-11 pr-11 rounded-md bg-[#F4F5F0] text-[#162536] placeholder-[#8E969E] text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#C4F135] transition"
+              />
+
+              <!-- Tombol Lihat / Sembunyikan Password -->
+              <button
+                type="button"
+                data-target="register-password"
+                aria-label="Tampilkan password"
+                class="toggle-password absolute right-3 text-[#162536] hover:opacity-70 transition cursor-pointer"
+              >
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" />
+                  <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
+                  <line x1="1" y1="1" x2="23" y2="23" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Tombol DAFTAR (Mengarah ke ./index.html) -->
+          <div class="pt-5">
+            <a
+              href="./index.html"
+              class="block text-center w-full py-3.5 sm:py-4 px-6 rounded-xl bg-[#F4F5F0] hover:bg-white text-[#8E969E] hover:text-[#162536] font-bold text-base sm:text-lg tracking-wide uppercase shadow-md active:scale-[0.99] transition cursor-pointer"
+            >
+              DAFTAR
+            </a>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Link ke Halaman Masuk -->
+      <p class="mt-6 text-white text-sm sm:text-base font-bold text-center">
+        Sudah punya akun?
+        <a href="./login.html" class="text-[#F46A25] hover:underline ml-1">
+          Masuk
+        </a>
+      </p>
+
+    </main>
+
+  </div>
+
+  <script>
+    document.querySelectorAll(".toggle-password").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const input = document.getElementById(btn.dataset.target);
+        if (!input) return;
+        input.type = input.type === "password" ? "text" : "password";
+      });
+    });
+  </script>
+</body>
+
+</html>

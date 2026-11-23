@@ -33,18 +33,14 @@
       <!-- Grid Daftar Acara: 1 kolom di HP, 2 kolom di Tablet ke atas -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
 
-        <!-- Card Acara 1 -->
-        <article
-          class="group relative h-[175px] sm:h-[195px] rounded-[20px] overflow-hidden bg-[#162536] shadow-md cursor-pointer">
-
-          <!-- img Placeholder (Link kosong) -->
-          <img src="assets/img/futsal.jpg" alt="FUNMATCH FUTSAL"
+        <!-- Card Acara 1 (Seluruh card & tombol > mengarah ke detail_acara.html) -->
+        <a href="./detail_acara.html"
+          class="block group relative h-[175px] sm:h-[195px] rounded-[20px] overflow-hidden bg-[#162536] shadow-md cursor-pointer">
+          <img src="./assets/img/futsal.jpg" alt="FUNMATCH FUTSAL"
             class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-300" />
 
-          <!-- Overlay Gelap agar teks & ikon tetap kontras -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/15"></div>
 
-          <!-- Konten Card -->
           <div class="relative z-10 h-full p-4 sm:p-5 flex flex-col justify-end">
             <h2 class="text-white text-lg sm:text-xl font-bold tracking-wide uppercase">
               FUNMATCH FUTSAL
@@ -53,7 +49,6 @@
             <div class="mt-2.5 flex items-center justify-between gap-2">
               <!-- Info Tanggal & Lokasi -->
               <div class="flex items-center gap-4 sm:gap-5 text-white text-xs sm:text-sm font-medium">
-                <!-- Tanggal -->
                 <div class="flex items-center gap-1.5">
                   <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#FACC15] shrink-0" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -65,7 +60,6 @@
                   <span>20 Nov 2026</span>
                 </div>
 
-                <!-- Lokasi -->
                 <div class="flex items-center gap-1.5">
                   <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#FACC15] shrink-0" viewBox="0 0 24 24" fill="currentColor">
                     <path
@@ -75,30 +69,26 @@
                 </div>
               </div>
 
-              <!-- Tombol Panah Kanan -->
-              <button type="button" aria-label="Lihat Detail Acara"
-                class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/50 border border-white/25 text-white flex items-center justify-center group-hover:bg-[#C4F135] group-hover:text-[#162536] group-hover:border-[#C4F135] transition cursor-pointer shrink-0">
+              <!-- Ikon Panah Kanan (>) -->
+              <span aria-hidden="true"
+                class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/50 border border-white/25 text-white flex items-center justify-center group-hover:bg-[#C4F135] group-hover:text-[#162536] group-hover:border-[#C4F135] transition shrink-0">
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="9 18 15 12 9 6" />
                 </svg>
-              </button>
+              </span>
             </div>
           </div>
-        </article>
+        </a>
 
-        <!-- Card Acara 2 -->
-        <article
-          class="group relative h-[175px] sm:h-[195px] rounded-[20px] overflow-hidden bg-[#162536] shadow-md cursor-pointer">
-
-          <!-- img Placeholder (Link kosong) -->
-          <img src="assets/img/badminton.jpg" alt="FUNMATCH BADMINTON"
+        <!-- Card Acara 2 (Seluruh card & tombol > mengarah ke detail_acara.html) -->
+        <a href="./detail_acara.html"
+          class="block group relative h-[175px] sm:h-[195px] rounded-[20px] overflow-hidden bg-[#162536] shadow-md cursor-pointer">
+          <img src="./assets/img/badminton.jpg" alt="FUNMATCH BADMINTON"
             class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-300" />
 
-          <!-- Overlay Gelap agar teks & ikon tetap kontras -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/15"></div>
 
-          <!-- Konten Card -->
           <div class="relative z-10 h-full p-4 sm:p-5 flex flex-col justify-end">
             <h2 class="text-white text-lg sm:text-xl font-bold tracking-wide uppercase">
               FUNMATCH BADMINTON
@@ -107,7 +97,6 @@
             <div class="mt-2.5 flex items-center justify-between gap-2">
               <!-- Info Tanggal & Lokasi -->
               <div class="flex items-center gap-4 sm:gap-5 text-white text-xs sm:text-sm font-medium">
-                <!-- Tanggal -->
                 <div class="flex items-center gap-1.5">
                   <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#FACC15] shrink-0" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -119,7 +108,6 @@
                   <span>20 Nov 2026</span>
                 </div>
 
-                <!-- Lokasi -->
                 <div class="flex items-center gap-1.5">
                   <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#FACC15] shrink-0" viewBox="0 0 24 24" fill="currentColor">
                     <path
@@ -129,17 +117,17 @@
                 </div>
               </div>
 
-              <!-- Tombol Panah Kanan -->
-              <button type="button" aria-label="Lihat Detail Acara"
-                class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/50 border border-white/25 text-white flex items-center justify-center group-hover:bg-[#C4F135] group-hover:text-[#162536] group-hover:border-[#C4F135] transition cursor-pointer shrink-0">
+              <!-- Ikon Panah Kanan (>) -->
+              <span aria-hidden="true"
+                class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/50 border border-white/25 text-white flex items-center justify-center group-hover:bg-[#C4F135] group-hover:text-[#162536] group-hover:border-[#C4F135] transition shrink-0">
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="9 18 15 12 9 6" />
                 </svg>
-              </button>
+              </span>
             </div>
           </div>
-        </article>
+        </a>
 
       </div>
     </main>
