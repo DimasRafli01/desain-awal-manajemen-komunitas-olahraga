@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="img/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>proyek-manajemen-komunitas-olahraga</title>
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <script src="./assets/js/tailwindcss.js"></script>
+</head>
+
+<body class="bg-[#F8F9F4] lg:bg-[#111827] flex justify-center min-h-dvh">
+
+  <!-- Container utama: Penuh di Ponsel & Tablet, dibatasi max-w-4xl di Desktop -->
+  <div
+    class="w-full lg:max-w-4xl min-h-dvh bg-[#F8F9F4] flex flex-col justify-between relative overflow-x-clip lg:shadow-2xl font-sans">
+
+    <!-- Header Sapaan -->
+    <header class="px-5 pt-8 pb-6 sm:px-8 sm:pt-10 sm:pb-8 md:px-12">
+      <h1 class="text-[30px] sm:text-4xl font-bold text-[#162536] leading-tight tracking-tight">
+        Hai, Mamat
+      </h1>
+      <p class="text-[15px] sm:text-lg font-semibold text-[#2B4159] mt-1.5">
+        Temukan acara yang akan berlangsung!
+      </p>
+    </header>
+
+    <!-- Konten Utama (Card Biru Gelap) -->
+    <main class="flex-1 bg-[#22364A] rounded-t-[28px] px-5 pt-6 pb-12 sm:px-8 md:px-12 flex flex-col">
+
+      <!-- 2 TOMBOL TAB DI ATAS -->
+      <div role="tablist" aria-label="Kategori Acara"
+        class="grid grid-cols-2 gap-1.5 bg-[#192838] p-1.5 rounded-2xl border border-white/10 mb-6">
+        <button
+          type="button"
+          id="tabBtnMendatang"
+          role="tab"
+          aria-selected="true"
+          onclick="switchTab('mendatang')"
+          class="py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold bg-[#C4F135] text-[#22364A] shadow-xs transition cursor-pointer">
+          Acara Mendatang
+        </button>
+        <button
+          type="button"
+          id="tabBtnPublik"
+          role="tab"
+          aria-selected="false"
+          onclick="switchTab('publik')"
+          class="py-2.5 px-3 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white transition cursor-pointer">
+          Acara Publik
+        </button>
+      </div>
+
+      <!-- TAB 1: ACARA MENDATANG -->
+      <section id="panelMendatang" role="tabpanel" aria-labelledby="tabBtnMendatang">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-white text-base sm:text-lg font-bold tracking-tight">
+            Jadwal Acara Kamu
+          </h2>
+          <span class="text-xs font-medium text-[#C4F135] bg-[#C4F135]/10 px-2.5 py-1 rounded-full">
+            2 Terjadwal
+          </span>
+        </div>
+
+        <!-- Grid Card Acara Mendatang (Mengarah ke detail_acara.html) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+
+          <!-- Card 1 -->
+          <a href="./detail_acara.html"
+            class="block bg-[#2B4159] hover:bg-[#324B66] border border-white/10 rounded-2xl p-4 transition active:scale-[0.99] group">
+            <div class="flex items-start justify-between gap-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#22364A] bg-[#C4F135] px-2.5 py-0.5 rounded-md">
+                Futsal
+              </span>
+              <span class="text-xs text-slate-300 font-medium">Besok • 19:30 WIB</span>
+            </div>
+            <h3 class="text-white font-bold text-base sm:text-lg mt-2.5 group-hover:text-[#C4F135] transition">
+              Sparring Malam Futsal FC
+            </h3>
+            <p class="text-slate-300 text-xs sm:text-sm mt-1 flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-[#C4F135] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              GOR Merdeka Arena, Lapangan B
+            </p>
+            <div class="mt-3.5 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
+              <span>Komunitas Futsal Medan</span>
+              <span class="text-[#C4F135] font-semibold flex items-center gap-1">
+                Detail
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="./detail_acara.html"
+            class="block bg-[#2B4159] hover:bg-[#324B66] border border-white/10 rounded-2xl p-4 transition active:scale-[0.99] group">
+            <div class="flex items-start justify-between gap-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#22364A] bg-[#C4F135] px-2.5 py-0.5 rounded-md">
+                Badminton
+              </span>
+              <span class="text-xs text-slate-300 font-medium">Minggu • 08:00 WIB</span>
+            </div>
+            <h3 class="text-white font-bold text-base sm:text-lg mt-2.5 group-hover:text-[#C4F135] transition">
+              Mabar Pagi PB Garuda
+            </h3>
+            <p class="text-slate-300 text-xs sm:text-sm mt-1 flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-[#C4F135] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Hall Bulutangkis Cendrawasih
+            </p>
+            <div class="mt-3.5 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
+              <span>PB Garuda Jaya</span>
+              <span class="text-[#C4F135] font-semibold flex items-center gap-1">
+                Detail
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- TAB 2: ACARA PUBLIK (DENGAN SEARCH BAR) -->
+      <section id="panelPublik" role="tabpanel" aria-labelledby="tabBtnPublik" class="hidden">
+        <!-- Search Bar -->
+        <div class="relative mb-5">
+          <span class="absolute inset-y-0 left-3.5 flex items-center text-slate-400 pointer-events-none">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </span>
+          <input
+            type="text"
+            id="searchAcaraInput"
+            placeholder="Cari acara publik, cabang olahraga, atau lokasi..."
+            class="w-full bg-[#192838] text-white placeholder-slate-400 text-sm sm:text-[15px] pl-11 pr-4 py-3.5 rounded-xl border border-white/15 focus:outline-none focus:border-[#C4F135] transition"
+          />
+        </div>
+
+        <!-- Daftar Acara Publik (Mengarah ke Modal Minta Gabung Acara) -->
+        <div id="daftarAcaraPublik" class="flex flex-col gap-3">
+
+          <!-- Item Publik 1 -->
+          <div
+            data-title="Lari Santai Minggu Pagi Running"
+            onclick="bukaModalGabung('Lari Santai Minggu Pagi (5K)', 'Komunitas Lari Nusantara', 'Minggu, 29 Nov • 06:00 WIB', 'Lapangan Merdeka', 'Gratis')"
+            class="acara-item bg-[#2B4159] hover:bg-[#324B66] border border-white/10 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 cursor-pointer transition active:scale-[0.99]">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-semibold text-[#C4F135] bg-[#C4F135]/15 px-2.5 py-0.5 rounded-md">
+                  Running
+                </span>
+                <span class="text-xs text-slate-300">• 18/30 Peserta</span>
+              </div>
+              <h3 class="text-white font-bold text-base mt-1.5">
+                Lari Santai Minggu Pagi (5K)
+              </h3>
+              <p class="text-slate-300 text-xs mt-1">
+                Minggu, 29 Nov • 06:00 WIB • Lapangan Merdeka
+              </p>
+            </div>
+            <button
+              type="button"
+              class="self-start sm:self-center shrink-0 px-4 py-2 rounded-xl bg-[#C4F135] text-[#22364A] font-bold text-xs sm:text-sm hover:brightness-95 transition cursor-pointer">
+              Minta Gabung
+            </button>
+          </div>
+
+          <!-- Item Publik 2 -->
+          <div
+            data-title="Fun Match Basket 3x3 Streetball"
+            onclick="bukaModalGabung('Fun Match Basket 3x3', 'Medan Hoops Club', 'Sabtu, 28 Nov • 16:30 WIB', 'Lapangan Basket Taman Ahmad Yani', 'Rp 25.000 / orang')"
+            class="acara-item bg-[#2B4159] hover:bg-[#324B66] border border-white/10 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 cursor-pointer transition active:scale-[0.99]">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-semibold text-[#C4F135] bg-[#C4F135]/15 px-2.5 py-0.5 rounded-md">
+                  Basket
+                </span>
+                <span class="text-xs text-slate-300">• 9/12 Peserta</span>
+              </div>
+              <h3 class="text-white font-bold text-base mt-1.5">
+                Fun Match Basket 3x3
+              </h3>
+              <p class="text-slate-300 text-xs mt-1">
+                Sabtu, 28 Nov • 16:30 WIB • Taman Ahmad Yani
+              </p>
+            </div>
+            <button
+              type="button"
+              class="self-start sm:self-center shrink-0 px-4 py-2 rounded-xl bg-[#C4F135] text-[#22364A] font-bold text-xs sm:text-sm hover:brightness-95 transition cursor-pointer">
+              Minta Gabung
+            </button>
+          </div>
+
+          <!-- Item Publik 3 -->
+          <div
+            data-title="Gowes Santai Akhir Pekan Sepeda Cycling"
+            onclick="bukaModalGabung('Gowes Santai Akhir Pekan', 'Sepeda Lipat Sumut', 'Minggu, 29 Nov • 06:15 WIB', 'Titik Kumpul: Kesawan Square', 'Gratis')"
+            class="acara-item bg-[#2B4159] hover:bg-[#324B66] border border-white/10 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 cursor-pointer transition active:scale-[0.99]">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-semibold text-[#C4F135] bg-[#C4F135]/15 px-2.5 py-0.5 rounded-md">
+                  Sepeda
+                </span>
+                <span class="text-xs text-slate-300">• 22/40 Peserta</span>
+              </div>
+              <h3 class="text-white font-bold text-base mt-1.5">
+                Gowes Santai Akhir Pekan
+              </h3>
+              <p class="text-slate-300 text-xs mt-1">
+                Minggu, 29 Nov • 06:15 WIB • Kesawan Square
+              </p>
+            </div>
+            <button
+              type="button"
+              class="self-start sm:self-center shrink-0 px-4 py-2 rounded-xl bg-[#C4F135] text-[#22364A] font-bold text-xs sm:text-sm hover:brightness-95 transition cursor-pointer">
+              Minta Gabung
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Pesan Jika Pencarian Tidak Ditemukan -->
+        <p id="emptySearchMsg" class="hidden text-center text-slate-300 text-sm py-8">
+          Tidak ada acara publik yang cocok dengan pencarianmu.
+        </p>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar (Sticky di bawah layar saat konten di-scroll) -->
+    <nav class="sticky bottom-0 z-20 bg-[#E5E9EC] h-[74px] sm:h-[82px] px-2 border-t border-black/5">
+      <div class="max-w-xl mx-auto h-full flex items-center justify-around">
+
+        <!-- Menu: Beranda -->
+        <a href="./index.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#1E293B] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9.5z" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-medium">Beranda</span>
+        </a>
+
+        <!-- Menu: Komunitas -->
+        <a href="./komunitas.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#8E969E] hover:text-[#374B61] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-medium">Komunitas</span>
+        </a>
+
+        <!-- Ruang Kosong untuk Tombol Tengah -->
+        <div class="w-16 sm:w-20"></div>
+
+        <!-- Floating Action Button (+) di Tengah -->
+        <a href="./buatkomunitas.html" aria-label="Buat Komunitas Baru"
+          class="absolute left-1/2 -translate-x-1/2 -top-7 sm:-top-8 w-[68px] h-[68px] sm:w-[76px] sm:h-[76px] rounded-full bg-[#C4F135] text-[#22364A] flex items-center justify-center shadow-md hover:brightness-95 active:scale-95 transition cursor-pointer">
+          <svg class="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+        </a>
+
+        <!-- Menu: Iuran -->
+        <a href="./iuran.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#8E969E] hover:text-[#374B61] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="16" height="10" rx="1.5" />
+            <circle cx="10" cy="11" r="2" />
+            <path d="M6 19h14a2 2 0 0 0 2-2V9" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-semibold">Iuran</span>
+        </a>
+
+        <!-- Menu: Profil -->
+        <a href="./profil.html"
+          class="flex flex-col items-center justify-center gap-1 text-[#8E969E] hover:text-[#374B61] w-16 sm:w-20 cursor-pointer">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>
+          <span class="text-[11px] sm:text-xs font-medium">Profil</span>
+        </a>
+
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- MODAL MINTA GABUNG ACARA -->
+  <div id="modalGabung"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-xs px-4">
+    <div class="bg-[#22364A] border border-white/15 rounded-2xl w-full max-w-md p-6 text-white shadow-2xl">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <span class="text-xs font-semibold text-[#C4F135] uppercase tracking-wider">Konfirmasi Bergabung</span>
+          <h3 id="modalJudulAcara" class="text-xl font-bold mt-1">Nama Acara</h3>
+          <p id="modalKomunitas" class="text-xs text-slate-300 mt-0.5">Nama Komunitas</p>
+        </div>
+        <button type="button" onclick="tutupModalGabung()"
+          class="text-slate-400 hover:text-white p-1 rounded-lg cursor-pointer" aria-label="Tutup modal">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Info Singkat Acara -->
+      <div class="bg-[#192838] rounded-xl p-3.5 mt-4 space-y-1.5 text-xs sm:text-sm text-slate-200">
+        <p><span class="text-slate-400">Waktu:</span> <span id="modalWaktu">-</span></p>
+        <p><span class="text-slate-400">Lokasi:</span> <span id="modalLokasi">-</span></p>
+        <p><span class="text-slate-400">Biaya:</span> <span id="modalBiaya" class="text-[#C4F135] font-semibold">-</span></p>
+      </div>
+
+      <!-- Catatan Opsional untuk Admin -->
+      <form id="formMintaGabung" onsubmit="kirimPermintaanGabung(event)" class="mt-4">
+        <label for="catatanGabung" class="block text-xs font-medium text-slate-300 mb-1.5">
+          Catatan untuk penyelenggara (opsional)
+        </label>
+        <textarea id="catatanGabung" rows="2"
+          placeholder="Contoh: Halo min, izin ikut gabung ya..."
+          class="w-full bg-[#192838] text-white placeholder-slate-400 text-sm p-3 rounded-xl border border-white/15 focus:outline-none focus:border-[#C4F135]"></textarea>
+
+        <div class="mt-5 flex items-center gap-2.5">
+          <button type="button" onclick="tutupModalGabung()"
+            class="flex-1 py-2.5 px-4 rounded-xl border border-white/20 text-slate-200 font-semibold text-sm hover:bg-white/5 transition cursor-pointer">
+            Batal
+          </button>
+          <button type="submit"
+            class="flex-1 py-2.5 px-4 rounded-xl bg-[#C4F135] text-[#22364A] font-bold text-sm hover:brightness-95 transition cursor-pointer">
+            Kirim Permintaan
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script Tab, Pencarian & Modal -->
+  <script>
+    // Kontrol Perpindahan 2 Tab
+    const tabBtnMendatang = document.getElementById('tabBtnMendatang');
+    const tabBtnPublik = document.getElementById('tabBtnPublik');
+    const panelMendatang = document.getElementById('panelMendatang');
+    const panelPublik = document.getElementById('panelPublik');
+
+    const activeTabClasses = ['bg-[#C4F135]', 'text-[#22364A]', 'font-bold', 'shadow-xs'];
+    const inactiveTabClasses = ['text-slate-300', 'hover:text-white', 'font-semibold'];
+
+    function switchTab(tabName) {
+      const isMendatang = tabName === 'mendatang';
+
+      panelMendatang.classList.toggle('hidden', !isMendatang);
+      panelPublik.classList.toggle('hidden', isMendatang);
+
+      tabBtnMendatang.setAttribute('aria-selected', isMendatang);
+      tabBtnPublik.setAttribute('aria-selected', !isMendatang);
+
+      if (isMendatang) {
+        tabBtnMendatang.classList.add(...activeTabClasses);
+        tabBtnMendatang.classList.remove(...inactiveTabClasses);
+        tabBtnPublik.classList.remove(...activeTabClasses);
+        tabBtnPublik.classList.add(...inactiveTabClasses);
+      } else {
+        tabBtnPublik.classList.add(...activeTabClasses);
+        tabBtnPublik.classList.remove(...inactiveTabClasses);
+        tabBtnMendatang.classList.remove(...activeTabClasses);
+        tabBtnMendatang.classList.add(...inactiveTabClasses);
+      }
+    }
+
+    // Filter pencarian acara publik secara real-time
+    const searchInput = document.getElementById('searchAcaraInput');
+    const acaraItems = document.querySelectorAll('.acara-item');
+    const emptyMsg = document.getElementById('emptySearchMsg');
+
+    searchInput.addEventListener('input', function () {
+      const keyword = this.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      acaraItems.forEach((item) => {
+        const text = (item.dataset.title + ' ' + item.textContent).toLowerCase();
+        if (text.includes(keyword)) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      emptyMsg.classList.toggle('hidden', visibleCount > 0);
+    });
+
+    // Kontrol Modal Minta Gabung Acara
+    const modalGabung = document.getElementById('modalGabung');
+
+    function bukaModalGabung(judul, komunitas, waktu, lokasi, biaya) {
+      document.getElementById('modalJudulAcara').textContent = judul;
+      document.getElementById('modalKomunitas').textContent = komunitas;
+      document.getElementById('modalWaktu').textContent = waktu;
+      document.getElementById('modalLokasi').textContent = lokasi;
+      document.getElementById('modalBiaya').textContent = biaya;
+      document.getElementById('catatanGabung').value = '';
+
+      modalGabung.classList.remove('hidden');
+      modalGabung.classList.add('flex');
+    }
+
+    function tutupModalGabung() {
+      modalGabung.classList.add('hidden');
+      modalGabung.classList.remove('flex');
+    }
+
+    function kirimPermintaanGabung(event) {
+      event.preventDefault();
+      const judul = document.getElementById('modalJudulAcara').textContent;
+      tutupModalGabung();
+      alert('Permintaan bergabung ke "' + judul + '" berhasil dikirim! Menunggu persetujuan penyelenggara.');
+    }
+
+    // Tutup modal jika area gelap di luar box diklik
+    modalGabung.addEventListener('click', function (e) {
+      if (e.target === modalGabung) {
+        tutupModalGabung();
+      }
+    });
+  </script>
+
+</body>
+
+</html>
